@@ -10,19 +10,17 @@ import showOne from './pages/showOne'
 
 function App() {
   return (
+    //main page for different routes
     <Router>
-        <div className='App'>
-
-            <Routes>
-                <Route path='/' exact component={showAll} />
-                <Route path='/addBook' component={addBook} />
-                <Route path='/editBook' component={editBook} />
-                <Route path='/removeBook' component={removeBook} />
-                <Route path='/showOne' component={showOne} />
-            </Routes>
-        </div>
+      <Routes>
+        <Route path="/" element={<showAll />} />
+        <Route path="/add" element={<addBook />} />
+        <Route path="/edit/:id" element={<editBook />} />
+        <Route path="/remove/:id" element={<removeBook />} />
+        <Route path="/show/:id" element={<showOne />} />
+      </Routes> 
     </Router>
-  );
+  )
 }
 
 export default App;
