@@ -52,7 +52,14 @@ router.put('/:id', express.json(), (req, res, next) => {
     res.json(book);
   });
 
-  
+  //delete book
+  router.delete('/:id', (req, res) => {
+    const book = books.find(book => book.id === parseInt(req.params.id));
+    if (!book) return res.status(404).send('The book with the given ID was not found.');
+    const index = books.indexOf(book);
+    books.splice(index, 1);
+    res.json(book);
+  });
 
 
 
