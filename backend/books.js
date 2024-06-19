@@ -38,8 +38,22 @@ router.post('/', express.json(), (req, res, next) => {
     book.description = req.body.description;
     books.push(book);
     res.json(book);
-    
   });
+
+
+//update book
+router.put('/:id', express.json(), (req, res, next) => {
+    const book = books.find(book => book.id === parseInt(req.params.id));
+    if (!book) return res.status(404).send('The book with the given ID was not found.');
+    book.title = req.body.title;
+    book.author = req.body.author;
+    book.year = req.body.year;
+    book.description = req.body.description;
+    res.json(book);
+  });
+
+  
+
 
 
 module.exports = router;
