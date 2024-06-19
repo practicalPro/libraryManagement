@@ -1,0 +1,20 @@
+{
+  "name": "librarymanagement",
+  "version": "1.0.0",
+  "description": "first clone to your device\r then in the terminal:\r     npm install\r     then run node server.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Yen-Ting Chou",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
