@@ -17,7 +17,7 @@ const books = require('./backend/books');
 
 const app = express();
 app.use('/books', books);
-
+app.use(express.json());
 
 
 //start the server
