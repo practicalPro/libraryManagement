@@ -2,23 +2,28 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import addBook from './pages/addBook';
-import editBook from './pages/editBook';
-import removeBook from './pages/removeBook';
-import showAll from './pages/showAll'
-import showOne from './pages/showOne'
+import ShowAll from './pages/showAll';
+import AddBook from './pages/addBook';
+import EditBook from './pages/editBook';
+import DeleteBook from './pages/deleteBook';
+import BookDetails from './pages/bookDetails';
 
 function App() {
   return (
-    //main page for different routes
+    //main page for different routes that redirect with buttons
     <Router>
-      <Routes>
-        <Route path="/" element={<showAll />} />
-        <Route path="/add" element={<addBook />} />
-        <Route path="/edit/:id" element={<editBook />} />
-        <Route path="/remove/:id" element={<removeBook />} />
-        <Route path="/show/:id" element={<showOne />} />
-      </Routes> 
+      <div className="App">
+        <header className="App-header">
+          <h1>Book Management System</h1>
+          <Routes>
+            <Route path="/" element={<ShowAll />} />
+            <Route path="/add" element={<AddBook />} />
+            <Route path="/edit" element={<EditBook />} />
+            <Route path="/delete" element={<DeleteBook />} />
+            <Route path="/details" element={<BookDetails />} />
+          </Routes>
+        </header>
+      </div>
     </Router>
   )
 }
