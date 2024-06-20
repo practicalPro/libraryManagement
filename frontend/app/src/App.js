@@ -20,7 +20,7 @@ function App() {
             <Route path="/add" element={<AddBook />} />
             <Route path="/edit" element={<EditBook />} />
             <Route path="/delete" element={<DeleteBook />} />
-            <Route path="/details" element={<BookDetails />} />
+            <Route path="/details/:id" element={<BookDetails />} />
           </Routes>
         </header>
       </div>

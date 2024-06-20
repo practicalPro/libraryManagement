@@ -1,14 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
+router.use(cors());
 
-//set up model of book
-const bookschema = {
-    id: Number,
-    title: String,
-    author: String,
-    year: Number,
-    description: String
-}
+
 
 //set up some mock data
 let books = [
@@ -20,6 +15,7 @@ let books = [
 //get all books
 router.get('/', (req, res) => {
     res.json(books);
+    console.log("Requested Books")
 });
 
 //get book by id
@@ -27,6 +23,7 @@ router.get('/:id', (req, res) => {
     const book = books.find(book => book.id === parseInt(req.params.id));
     if (!book) return res.status(404).send('The book with the given ID was not found.');
     res.json(book);
+    console.log("Requested Book", book.id)
 });
 
 //add book
