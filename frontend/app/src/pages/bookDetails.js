@@ -30,6 +30,7 @@ const BookDetails = (props) => {
                 <li>Description: {book.description}</li>
             </ul>
             <Link to={`/delete/${book.id}`}>Delete</Link>
+            <Link to={`/edit/${book.id}`}>Edit</Link>
         </div>
     );
 }   
