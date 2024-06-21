@@ -16,7 +16,7 @@ const BookDetails = (props) => {
             .then(data => {
                 setBook(data);
             })
-    }, [props.id]);
+    }, []);
 
     return (
         <div>

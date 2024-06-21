@@ -35,6 +35,7 @@ router.post('/', express.json(), (req, res, next) => {
     book.description = req.body.description;
     books.push(book);
     res.json(book);
+    console.log("Added Book", book.id)
   });
 
 
