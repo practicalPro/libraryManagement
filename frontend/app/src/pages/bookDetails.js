@@ -23,11 +23,13 @@ const BookDetails = (props) => {
             <h2>Book Details</h2>
             <Link to="/">Back</Link>
             <ul>
+                <li>ID: {book.id}</li>  
                 <li>Title: {book.title}</li>
                 <li>Author: {book.author}</li>
                 <li>Year: {book.year}</li>
                 <li>Description: {book.description}</li>
             </ul>
+            <Link to={`/delete/${book.id}`}>Delete</Link>
         </div>
     );
 }   
