@@ -48,6 +48,7 @@ router.put('/:id', express.json(), (req, res, next) => {
     book.year = req.body.year;
     book.description = req.body.description;
     res.json(book);
+    console.log("Updated Book", book.id)
   });
 
   //delete book
@@ -57,6 +58,7 @@ router.put('/:id', express.json(), (req, res, next) => {
     const index = books.indexOf(book);
     books.splice(index, 1);
     res.json(book);
+    console.log("Deleted Book", book.id)
   });
 
 
